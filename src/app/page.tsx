@@ -1,5 +1,6 @@
 import FloatingHearts from './FloatingHearts'
 import Timeline from './Timeline'
+import Gallery from './Gallery'
 import LoveReasons from './LoveReasons'
 
 export default function HomePage() {
@@ -14,10 +15,13 @@ export default function HomePage() {
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/>
           </svg>
         </div>
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-4 animate-fade-in">
-          Our Story So Far
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-2 animate-fade-in">
+          Miryam Yosef
         </h1>
-        <p className="text-lg sm:text-xl text-gray-500 max-w-md animate-fade-in" style={{ animationDelay: '0.3s' }}>
+        <p className="font-serif text-xl sm:text-2xl text-rose mb-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          Our Story So Far
+        </p>
+        <p className="text-lg sm:text-xl text-gray-500 max-w-md animate-fade-in" style={{ animationDelay: '0.4s' }}>
           Every moment with you is my favorite chapter.
         </p>
         <div className="mt-10 animate-fade-in" style={{ animationDelay: '0.6s' }}>
@@ -34,6 +38,14 @@ export default function HomePage() {
           Our <span className="text-rose">Timeline</span>
         </h2>
         <Timeline />
+      </section>
+
+      {/* Gallery */}
+      <section className="relative z-10 py-20 px-6">
+        <h2 className="font-serif text-3xl sm:text-4xl text-center text-gray-800 mb-12">
+          Our <span className="text-rose">Moments</span>
+        </h2>
+        <Gallery />
       </section>
 
       {/* Love Reasons */}
