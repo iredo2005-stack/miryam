@@ -4,12 +4,11 @@ import { useEffect, useRef } from 'react'
 
 // Add your photo URLs here — replace the placeholders with real image links
 const PHOTOS = [
-  { src: '/photos/1.jpg', caption: 'The beginning' },
-  { src: '/photos/2.jpg', caption: 'Our favorite day' },
-  { src: '/photos/3.jpg', caption: 'Together forever' },
-  { src: '/photos/4.jpg', caption: 'Making memories' },
-  { src: '/photos/5.jpg', caption: 'Us' },
-  { src: '/photos/6.jpg', caption: 'Always smiling' },
+  { src: '/photos/1.jpg', caption: 'Donating blood together — because even our blood type is compatible' },
+  { src: '/photos/2.jpg', caption: 'Smiling on a bench — just us and the sunset' },
+  { src: '/photos/3.jpg', caption: 'Being silly on the bus — my favorite kind of us' },
+  { src: '/photos/4.jpg', caption: 'You and me in uniform — distance made us stronger' },
+  { src: '/photos/5.jpg', caption: 'Car rides with you — my happy place' },
 ]
 
 export default function Gallery() {
@@ -35,7 +34,9 @@ export default function Gallery() {
           <div
             key={i}
             ref={(el) => { refs.current[i] = el }}
-            className="scroll-reveal group relative aspect-square rounded-2xl overflow-hidden bg-blush/30 border border-rose/10 shadow-sm hover:shadow-lg transition-all duration-300"
+            className={`scroll-reveal group relative rounded-2xl overflow-hidden bg-blush/30 border border-rose/10 shadow-sm hover:shadow-lg transition-all duration-300 ${
+              i === 0 ? 'col-span-2 sm:col-span-1 aspect-[4/3] sm:aspect-square' : 'aspect-square'
+            }`}
           >
             <img
               src={photo.src}
