@@ -1,6 +1,7 @@
 import FloatingHearts from './FloatingHearts'
 import Timeline from './Timeline'
 import LoveReasons from './LoveReasons'
+import LoveQuestion from './LoveQuestion'
 
 export default function HomePage() {
   return (
@@ -47,6 +48,13 @@ export default function HomePage() {
           </h2>
           <p className="text-gray-500 mb-10">לחצי על הכפתור ותני לי להזכיר לך.</p>
           <LoveReasons />
+        </div>
+      </section>
+
+      {/* Love Question */}
+      <section className="relative z-10 py-16 px-6">
+        <div className="max-w-lg mx-auto bg-white/70 backdrop-blur-sm border border-rose/10 rounded-3xl p-8 shadow-sm">
+          <LoveQuestion />
         </div>
       </section>
 
