@@ -1,6 +1,5 @@
 import FloatingHearts from './FloatingHearts'
 import Timeline from './Timeline'
-import Gallery from './Gallery'
 import LoveReasons from './LoveReasons'
 
 export default function HomePage() {
@@ -38,14 +37,6 @@ export default function HomePage() {
           ציר <span className="text-rose">הזמן</span> שלנו
         </h2>
         <Timeline />
-      </section>
-
-      {/* Gallery */}
-      <section className="relative z-10 py-20 px-6">
-        <h2 className="font-serif text-3xl sm:text-4xl text-center text-gray-800 mb-12">
-          הרגעים <span className="text-rose">שלנו</span>
-        </h2>
-        <Gallery />
       </section>
 
       {/* Love Reasons */}

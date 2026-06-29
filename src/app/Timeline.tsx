@@ -8,36 +8,42 @@ const EVENTS = [
     title: 'נפגשנו במכינה',
     desc: 'ההתחלה של הסיפור שלנו. הרגע שבו הכל השתנה.',
     emoji: '✨',
+    photo: '/photos/1.jpg',
   },
   {
     date: '14/02/2024',
     title: 'רשמית זוג',
     desc: 'היום האהוב עליי. ולנטיינס הפך ליום שלנו לנצח.',
     emoji: '💕',
+    photo: '/photos/2.jpg',
   },
   {
     date: 'אפריל 2024',
     title: 'סיימנו את המכינה',
     desc: 'סיימנו יחד מסע של 10 חודשים — זה לצד זה.',
     emoji: '🎓',
+    photo: '/photos/3.jpg',
   },
   {
     date: 'אפריל – אוגוסט 2024',
     title: 'הקיץ הזהוב שלנו',
     desc: 'נהנינו מכל רגע ורגע ביחד לפני הפרק הבא.',
     emoji: '☀️',
+    photo: null,
   },
   {
     date: '14/08/2024',
     title: 'התחלתי שירות צבאי',
     desc: 'אתגר חדש שעברנו יחד. המרחק רק חיזק אותנו.',
     emoji: '🫡',
+    photo: '/photos/4.jpg',
   },
   {
     date: 'אוגוסט 2024 – היום',
     title: 'גדלים ביחד',
     desc: 'בונים את הקצב שלנו, נפגשים כל שבוע, ומתחזקים כל יום.',
     emoji: '💪',
+    photo: '/photos/5.jpg',
   },
 ]
 
@@ -48,14 +54,11 @@ export default function Timeline() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible')
-          }
+          if (entry.isIntersecting) entry.target.classList.add('visible')
         })
       },
-      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
     )
-
     refs.current.forEach((el) => { if (el) observer.observe(el) })
     return () => observer.disconnect()
   }, [])
@@ -83,14 +86,29 @@ export default function Timeline() {
             <div className="w-12 sm:hidden flex-shrink-0" />
 
             {/* Card */}
-            <div className={`flex-1 sm:w-[calc(50%-2rem)] ${isLeft ? 'sm:pr-10 sm:text-right' : 'sm:pl-10 sm:text-left'}`} dir="rtl">
-              <div className="bg-white/70 backdrop-blur-sm border border-rose/10 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
-                <div className={`flex items-center gap-2 mb-2 ${isLeft ? 'sm:justify-end' : 'sm:justify-start'}`}>
-                  <span className="text-lg">{event.emoji}</span>
-                  <span className="text-xs font-medium text-rose tracking-wide">{event.date}</span>
+            <div className={`flex-1 sm:w-[calc(50%-2rem)] ${isLeft ? 'sm:pr-10' : 'sm:pl-10'}`} dir="rtl">
+              <div className="bg-white/70 backdrop-blur-sm border border-rose/10 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+
+                {/* Photo */}
+                {event.photo && (
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img
+                      src={event.photo}
+                      alt={event.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
+
+                {/* Text content */}
+                <div className="p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-lg">{event.emoji}</span>
+                    <span className="text-xs font-medium text-rose tracking-wide">{event.date}</span>
+                  </div>
+                  <h3 className="font-serif text-lg font-bold text-gray-800 mb-1">{event.title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">{event.desc}</p>
                 </div>
-                <h3 className="font-serif text-lg font-bold text-gray-800 mb-1">{event.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{event.desc}</p>
               </div>
             </div>
 
