@@ -5,38 +5,38 @@ import { useEffect, useRef } from 'react'
 const EVENTS = [
   {
     date: '09/06/2023',
-    title: 'Meeting at the Mechina',
-    desc: 'The beginning of our story. The moment everything changed.',
+    title: 'נפגשנו במכינה',
+    desc: 'ההתחלה של הסיפור שלנו. הרגע שבו הכל השתנה.',
     emoji: '✨',
   },
   {
     date: '14/02/2024',
-    title: 'Officially a Couple',
-    desc: 'My favorite day. Valentine\'s Day became our day forever.',
+    title: 'רשמית זוג',
+    desc: 'היום האהוב עליי. ולנטיינס הפך ליום שלנו לנצח.',
     emoji: '💕',
   },
   {
-    date: 'April 2024',
-    title: 'Finishing the Mechina',
-    desc: 'We completed our 10-month Mechina journey — side by side.',
+    date: 'אפריל 2024',
+    title: 'סיימנו את המכינה',
+    desc: 'סיימנו יחד מסע של 10 חודשים — זה לצד זה.',
     emoji: '🎓',
   },
   {
-    date: 'Apr – Aug 2024',
-    title: 'Our Golden Summer',
-    desc: 'Enjoying every single moment together before the next chapter.',
+    date: 'אפריל – אוגוסט 2024',
+    title: 'הקיץ הזהוב שלנו',
+    desc: 'נהנינו מכל רגע ורגע ביחד לפני הפרק הבא.',
     emoji: '☀️',
   },
   {
     date: '14/08/2024',
-    title: 'IDF Service Begins',
-    desc: 'A new challenge we faced together. Distance made us stronger.',
+    title: 'התחלתי שירות צבאי',
+    desc: 'אתגר חדש שעברנו יחד. המרחק רק חיזק אותנו.',
     emoji: '🫡',
   },
   {
-    date: 'Aug 2024 – Today',
-    title: 'Growing Stronger',
-    desc: 'Building our rhythm, meeting once a week, and growing stronger every single day.',
+    date: 'אוגוסט 2024 – היום',
+    title: 'גדלים ביחד',
+    desc: 'בונים את הקצב שלנו, נפגשים כל שבוע, ומתחזקים כל יום.',
     emoji: '💪',
   },
 ]
@@ -61,7 +61,7 @@ export default function Timeline() {
   }, [])
 
   return (
-    <div className="max-w-2xl mx-auto relative">
+    <div className="max-w-2xl mx-auto relative" dir="ltr">
       {/* Vertical line */}
       <div className="absolute left-6 sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-rose/40 via-rose/20 to-transparent sm:-translate-x-px" />
 
@@ -83,11 +83,11 @@ export default function Timeline() {
             <div className="w-12 sm:hidden flex-shrink-0" />
 
             {/* Card */}
-            <div className={`flex-1 sm:w-[calc(50%-2rem)] ${isLeft ? 'sm:pr-10 sm:text-right' : 'sm:pl-10 sm:text-left'}`}>
+            <div className={`flex-1 sm:w-[calc(50%-2rem)] ${isLeft ? 'sm:pr-10 sm:text-right' : 'sm:pl-10 sm:text-left'}`} dir="rtl">
               <div className="bg-white/70 backdrop-blur-sm border border-rose/10 rounded-2xl p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
                 <div className={`flex items-center gap-2 mb-2 ${isLeft ? 'sm:justify-end' : 'sm:justify-start'}`}>
                   <span className="text-lg">{event.emoji}</span>
-                  <span className="text-xs font-medium text-rose tracking-wide uppercase">{event.date}</span>
+                  <span className="text-xs font-medium text-rose tracking-wide">{event.date}</span>
                 </div>
                 <h3 className="font-serif text-lg font-bold text-gray-800 mb-1">{event.title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{event.desc}</p>

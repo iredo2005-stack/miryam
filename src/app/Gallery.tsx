@@ -4,11 +4,11 @@ import { useEffect, useRef } from 'react'
 
 // Add your photo URLs here — replace the placeholders with real image links
 const PHOTOS = [
-  { src: '/photos/1.jpg', caption: 'Donating blood together — because even our blood type is compatible' },
-  { src: '/photos/2.jpg', caption: 'Smiling on a bench — just us and the sunset' },
-  { src: '/photos/3.jpg', caption: 'Being silly on the bus — my favorite kind of us' },
-  { src: '/photos/4.jpg', caption: 'You and me in uniform — distance made us stronger' },
-  { src: '/photos/5.jpg', caption: 'Car rides with you — my happy place' },
+  { src: '/photos/1.jpg', caption: 'תורמים דם ביחד — כי גם סוג הדם שלנו מתאים' },
+  { src: '/photos/2.jpg', caption: 'מחייכים על ספסל — רק אנחנו והשקיעה' },
+  { src: '/photos/3.jpg', caption: 'משתגעים באוטובוס — הגרסה הכי אהובה שלנו' },
+  { src: '/photos/4.jpg', caption: 'את ואני במדים — המרחק רק חיזק אותנו' },
+  { src: '/photos/5.jpg', caption: 'נסיעות ברכב איתך — המקום הכי שמח שלי' },
 ]
 
 export default function Gallery() {
@@ -62,7 +62,7 @@ export default function Gallery() {
           </div>
         ))}
       </div>
-      <p className="text-center text-gray-400 text-xs mt-6">Our favorite moments together</p>
+      <p className="text-center text-gray-400 text-xs mt-6">הרגעים האהובים שלנו ביחד</p>
     </div>
   )
 }
